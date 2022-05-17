@@ -18,5 +18,10 @@ void main() {
   print("----");
 
   // Способ 4.
-  registered3(speed: 100, name: "Volvo");
+  registered4(speed: 250, name: "Audi");
+
+  print("----");
+
+  // Способ 5.
+  registered5(speed: 300, name: "Porsche");
 }

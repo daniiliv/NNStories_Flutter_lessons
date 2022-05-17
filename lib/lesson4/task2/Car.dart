@@ -2,7 +2,7 @@ class Car {
   int speed = 250;
   String name = "Audi";
 
-  Car(this.speed, this.name);
+  Car();
 
   Car.createSlowCar(this.speed, this.name); // Именованный конструктор
 
@@ -11,12 +11,12 @@ class Car {
   }
 }
 
-void registered({required speed, required name}) {
+void registered({required int speed, required String name}) {
   Car car = Car.createSlowCar(speed, name); // Вызов именованного конструктора
   car.toPrint();
 }
 
-void registered2({required speed, required name}) {
+void registered2({required int speed, required String name}) {
   Car car = Car.createSlowCar(speed, name); // Вызов именованного конструктора
   car.toPrint();
 
@@ -24,16 +24,29 @@ void registered2({required speed, required name}) {
   car2.toPrint();
 }
 
-void registered3({required speed, required name}) {
+void registered3({required int speed, required String name}) {
   Car car = Car.createSlowCar(speed, name); // Вызов именованного конструктора
   car.toPrint();
   car.toPrint();
 }
 
-void registered4({required speed, required name}) {
+void registered4({required int speed, required String name}) {
   Car car = Car.createSlowCar(speed, name); // Вызов именованного конструктора
   car.toPrint();
 
-  Car car2 = Car(speed, name);
+  Car car2 = Car();
   car2.toPrint();
+}
+
+// Каскады.
+void registered5({required int speed, required String name}) {
+  Car()
+    ..name = name
+    ..speed = speed
+    ..toPrint();
+
+  Car()
+    ..name = name
+    ..speed = speed
+    ..toPrint();
 }
