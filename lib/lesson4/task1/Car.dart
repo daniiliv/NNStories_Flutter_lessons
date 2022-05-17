@@ -9,7 +9,7 @@ class Car {
   }
 }
 
-void registered({required speed, required name}) {
+void registered({required int speed, required String name}) {
   Car car = Car.createSlowCar(speed, name); // Вызов именованного конструктора
   car.toPrint();
 }
