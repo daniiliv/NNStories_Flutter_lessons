@@ -14,4 +14,9 @@ void main() {
 
   // Способ 3.
   registered3(speed: 100, name: "VAZ");
+
+  print("----");
+
+  // Способ 4.
+  registered3(speed: 100, name: "Volvo");
 }
