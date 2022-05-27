@@ -5,9 +5,9 @@ import 'package:nnstories_lessons/lesson7/UI/pages/second_page.dart';
 import 'package:nnstories_lessons/lesson7/UI/pages/third_page.dart';
 
 class MyBottomNavigationBar extends StatelessWidget {
-  BuildContext _context;
+  final BuildContext _context;
 
-  MyBottomNavigationBar(this._context, {Key? key}) : super(key: key);
+  const MyBottomNavigationBar(this._context, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

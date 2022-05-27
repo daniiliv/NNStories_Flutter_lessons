@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nnstories_lessons/lesson7/UI/widgets/MyBottomNavigationBar.dart';
+import 'package:nnstories_lessons/lesson7/UI/widgets/my_bottom_navigation_bar.dart';
 
 import 'menu.dart';
 
