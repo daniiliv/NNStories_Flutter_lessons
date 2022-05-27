@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nnstories_lessons/lesson7/UI/widgets/my_scaffold.dart';
 import 'package:nnstories_lessons/lesson7/UI/widgets/news_widget.dart';
+import 'package:nnstories_lessons/lesson7/models/News.dart';
 
 class FirstScreen extends StatelessWidget {
   static const String title = "Страница 1";
@@ -16,12 +17,17 @@ class FirstScreen extends StatelessWidget {
   }
 
   buildBody(BuildContext context) {
-    return ListView(
-      children: const [
-        NewsWidget(),
-        NewsWidget(),
-        NewsWidget(),
-      ],
-    );
+    int numOfNews = 15;
+
+    return ListView.builder(
+        itemCount: numOfNews,
+        itemBuilder: (BuildContext inBuildContext, int inIndex) {
+          News newsEntry = News(
+              title: "Новость $inIndex",
+              text: "Какой-то текст $inIndex",
+              id: inIndex.toString(),
+              photoURL: "https://picsum.photos/200");
+          return NewsWidget(newsEntry: newsEntry);
+        });
   }
 }

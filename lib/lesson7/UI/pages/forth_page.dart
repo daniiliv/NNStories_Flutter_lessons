@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../widgets/my_scaffold.dart';
 
-class FourthPage extends StatelessWidget {
-  const FourthPage({Key? key}) : super(key: key);
+class ForthPage extends StatelessWidget {
+  const ForthPage({Key? key}) : super(key: key);
 
   static const String title = "Страница 4";
 
