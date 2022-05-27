@@ -12,6 +12,12 @@ class MyBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      unselectedItemColor: Colors.white,
+      selectedItemColor: Colors.white,
+      backgroundColor: Colors.red,
+      type: BottomNavigationBarType.fixed,
+      selectedFontSize: 12,
+      showUnselectedLabels:  true,
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
