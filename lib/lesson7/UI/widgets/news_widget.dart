@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nnstories_lessons/lesson7/models/News.dart';
+import 'package:nnstories_lessons/lesson7/models/news.dart';
 
 class NewsWidget extends StatelessWidget {
   final News newsEntry;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../widgets/my_scaffold.dart';
+import 'package:nnstories_lessons/lesson7/UI/pages/profile_page.dart';
+import 'package:nnstories_lessons/lesson7/UI/widgets/my_scaffold.dart';
 
 class ForthPage extends StatelessWidget {
   const ForthPage({Key? key}) : super(key: key);
@@ -15,8 +16,6 @@ class ForthPage extends StatelessWidget {
   }
 
   buildBody(BuildContext context) {
-    return const Center(
-      child: Text(title),
-    );
+    return const ProfilePage();
   }
 }

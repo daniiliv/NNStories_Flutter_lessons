@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nnstories_lessons/lesson7/UI/widgets/my_scaffold.dart';
 import 'package:nnstories_lessons/lesson7/UI/widgets/news_widget.dart';
-import 'package:nnstories_lessons/lesson7/models/News.dart';
+import 'package:nnstories_lessons/lesson7/models/news.dart';
 
 class FirstScreen extends StatelessWidget {
   static const String title = "Страница 1";
