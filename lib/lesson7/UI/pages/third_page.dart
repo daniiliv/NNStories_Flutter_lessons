@@ -14,7 +14,7 @@ class ThirdPage extends StatelessWidget {
     );
   }
 
-  buildBody(BuildContext context) {
+  Widget buildBody(BuildContext context) {
     return Column(
       children: [
         const Text(title),

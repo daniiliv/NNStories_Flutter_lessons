@@ -16,7 +16,7 @@ class FirstScreen extends StatelessWidget {
     );
   }
 
-  buildBody(BuildContext context) {
+  Widget buildBody(BuildContext context) {
     int numOfNews = 15;
 
     return ListView.builder(

@@ -15,7 +15,7 @@ class ForthPage extends StatelessWidget {
     );
   }
 
-  buildBody(BuildContext context) {
+  Widget buildBody(BuildContext context) {
     return const ProfilePage();
   }
 }
