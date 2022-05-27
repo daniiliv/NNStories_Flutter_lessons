@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nnstories_lessons/lesson7/UI/widgets/MyBottomNavigationBar.dart';
 
 import 'menu.dart';
 
@@ -6,7 +7,7 @@ class MyScaffold extends StatelessWidget {
   final String title;
   final Widget body;
 
-  MyScaffold({Key? key, this.title = "Заголовок", required this.body})
+  const MyScaffold({Key? key, this.title = "Заголовок", required this.body})
       : super(key: key);
 
   @override
@@ -34,6 +35,7 @@ class MyScaffold extends StatelessWidget {
         drawerEdgeDragWidth: width * 0.7,
         endDrawer: buildMenu(context, width: width * 0.7),
         body: body,
+        bottomNavigationBar: MyBottomNavigationBar(context),
       );
     }
   }
