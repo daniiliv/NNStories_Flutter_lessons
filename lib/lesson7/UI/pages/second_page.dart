@@ -24,69 +24,67 @@ class SecondPage extends StatelessWidget {
         alignment: Alignment.topCenter,
         child: TopBar(),
       ),
-      Padding(
+      Container(
         padding: const EdgeInsets.all(16.0),
-        child: Align(
-          alignment: Alignment.topCenter,
-          child: Column(
-            children: [
-              const CircleAvatar(
-                backgroundImage: NetworkImage(avatarImageURL),
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                ),
-                radius: 40,
+        alignment: Alignment.topCenter,
+        child: Column(
+          children: [
+            const CircleAvatar(
+              backgroundImage: NetworkImage(avatarImageURL),
+              child: Align(
+                alignment: Alignment.bottomCenter,
               ),
-              const Text("Some text"),
-              const Spacer(),
-              Card(
-                clipBehavior: Clip.antiAlias,
-                child: Column(
-                  children: [
-                    ListTile(
-                      leading: const Icon(Icons.arrow_drop_down_circle),
-                      title: const Text('Card title 1'),
-                      subtitle: Text(
-                        'Secondary Text',
-                        style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                      ),
+              radius: 40,
+            ),
+            const Text("Some text"),
+            const Spacer(),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              child: Column(
+                children: [
+                  ListTile(
+                    leading: const Icon(Icons.arrow_drop_down_circle),
+                    title: const Text('Card title 1'),
+                    subtitle: Text(
+                      'Secondary Text',
+                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Text(
-                        'Greyhound divisively hello coldly wonderfully marginally far upon excluding.',
-                        style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                      ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(
+                      'Greyhound divisively hello coldly wonderfully marginally far upon excluding.',
+                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
                     ),
-                    ButtonBar(
-                      alignment: MainAxisAlignment.start,
-                      children: [
-                        TextButton(
-                          style: TextButton.styleFrom(
-                            primary: const Color(0xFF6200EE), // foreground
-                          ),
-                          onPressed: () {
-                            // Perform some action
-                          },
-                          child: const Text('ACTION 1'),
+                  ),
+                  ButtonBar(
+                    alignment: MainAxisAlignment.start,
+                    children: [
+                      TextButton(
+                        style: TextButton.styleFrom(
+                          primary: const Color(0xFF6200EE), // foreground
                         ),
-                        TextButton(
-                          style: TextButton.styleFrom(
-                            primary: const Color(0xFF6200EE), // foreground
-                          ),
-                          onPressed: () {
-                            // Perform some action
-                          },
-                          child: const Text('ACTION 2'),
+                        onPressed: () {
+                          // Perform some action
+                        },
+                        child: const Text('ACTION 1'),
+                      ),
+                      TextButton(
+                        style: TextButton.styleFrom(
+                          primary: const Color(0xFF6200EE), // foreground
                         ),
-                      ],
-                    ),
-                    Image.network('https://picsum.photos/200/100'),
-                  ],
-                ),
+                        onPressed: () {
+                          // Perform some action
+                        },
+                        child: const Text('ACTION 2'),
+                      ),
+                    ],
+                  ),
+                  Image.network('https://picsum.photos/200/100'),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       )
     ]);
