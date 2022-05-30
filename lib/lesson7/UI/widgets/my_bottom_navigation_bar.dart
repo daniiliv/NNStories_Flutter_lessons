@@ -38,7 +38,7 @@ class MyBottomNavigationBar extends StatelessWidget {
             backgroundColor: Colors.red,
           ),
         ],
-        onTap: (index) async {
+        onTap: (int index) {
           changePage(index, context);
         });
   }
