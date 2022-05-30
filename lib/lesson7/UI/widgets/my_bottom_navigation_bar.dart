@@ -5,66 +5,64 @@ import 'package:nnstories_lessons/lesson7/UI/pages/second_page.dart';
 import 'package:nnstories_lessons/lesson7/UI/pages/third_page.dart';
 
 class MyBottomNavigationBar extends StatelessWidget {
-  final BuildContext _context;
-
-  const MyBottomNavigationBar(this._context, {Key? key}) : super(key: key);
+  const MyBottomNavigationBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      unselectedItemColor: Colors.white,
-      selectedItemColor: Colors.white,
-      backgroundColor: Colors.red,
-      type: BottomNavigationBarType.fixed,
-      selectedFontSize: 12,
-      showUnselectedLabels:  true,
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Страница 1',
-          backgroundColor: Colors.red,
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.business),
-          label: 'Страница 2',
-          backgroundColor: Colors.red,
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.school),
-          label: 'Страница 3',
-          backgroundColor: Colors.red,
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.account_circle_sharp),
-          label: 'Страница 4',
-          backgroundColor: Colors.red,
-        ),
-      ],
-      onTap: changePage,
-    );
+        unselectedItemColor: Colors.white,
+        selectedItemColor: Colors.white,
+        backgroundColor: Colors.red,
+        type: BottomNavigationBarType.fixed,
+        selectedFontSize: 12,
+        showUnselectedLabels: true,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Страница 1',
+            backgroundColor: Colors.red,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            label: 'Страница 2',
+            backgroundColor: Colors.red,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            label: 'Страница 3',
+            backgroundColor: Colors.red,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle_sharp),
+            label: 'Страница 4',
+            backgroundColor: Colors.red,
+          ),
+        ],
+        onTap: (index) async {
+          changePage(index, context);
+        });
+  }
+}
+
+void changePage(int index, BuildContext context) {
+  Widget page = const FirstScreen();
+  switch (index) {
+    case 0:
+      page = const FirstScreen();
+      break;
+    case 1:
+      page = const SecondPage();
+      break;
+    case 2:
+      page = const ThirdPage();
+      break;
+    case 3:
+      page = const ForthPage();
+      break;
   }
 
-  void changePage(int index) {
-    switch (index) {
-      case 0:
-        navigateToPage(const FirstScreen());
-        break;
-      case 1:
-        navigateToPage(const SecondPage());
-        break;
-      case 2:
-        navigateToPage(const ThirdPage());
-        break;
-      case 3:
-        navigateToPage(const ForthPage());
-        break;
-    }
-  }
-
-  void navigateToPage(Widget page) {
-    Navigator.of(_context)
-        .pushReplacement(MaterialPageRoute(builder: (BuildContext context) {
-      return page;
-    }));
-  }
+  Navigator.of(context)
+      .pushReplacement(MaterialPageRoute(builder: (BuildContext context) {
+    return page;
+  }));
 }

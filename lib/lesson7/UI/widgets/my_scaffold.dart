@@ -21,7 +21,7 @@ class MyScaffold extends StatelessWidget {
             Expanded(
               child: Text(
                 title,
-                style: TextStyle(fontSize: 24),
+                style: const TextStyle(fontSize: 24),
               ),
             ),
             Expanded(flex: 3, child: body),
@@ -35,7 +35,7 @@ class MyScaffold extends StatelessWidget {
         drawerEdgeDragWidth: width * 0.7,
         endDrawer: buildMenu(context, width: width * 0.7),
         body: body,
-        bottomNavigationBar: MyBottomNavigationBar(context),
+        bottomNavigationBar: const MyBottomNavigationBar(),
       );
     }
   }
