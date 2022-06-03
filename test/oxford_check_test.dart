@@ -21,7 +21,7 @@ void main() {
       expect(result, false);
     });
 
-    test('"asdasdasdasd" should be found in dictionary', () async {
+    test('"asdasdasdasd" shouldn\'t be found in dictionary', () async {
       bool result = await isWordInOxfordDictionary("asdasdasdasd");
 
       expect(result, false);
