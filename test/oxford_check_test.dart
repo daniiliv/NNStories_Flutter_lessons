@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:nnstories_lessons/helping/oxford_check.dart';
 
 void main() {
-  group('Counter', () {
+  group('Oxford check', () {
     test('"harassment" should be found in dictionary', () async {
       bool result = await isWordInOxfordDictionary("harassment");
 
