@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'homepage.dart';
 
 class CorrectPoints extends StatelessWidget {
+  const CorrectPoints({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -11,13 +13,13 @@ class CorrectPoints extends StatelessWidget {
             ? Text('correct',
             style: TextStyle(
                 fontSize: 35, color: Colors.greenAccent[400]))
-            : Text('wrong',
+            : const Text('wrong',
         style: TextStyle(fontSize: 35, color: Colors.redAccent),
           ),
         ),
         Text(
           'points: $points',
-          style: TextStyle(fontSize: 30, color: Colors.teal),
+          style: const TextStyle(fontSize: 30, color: Colors.teal),
         ),
       ],
     );

@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:oxford_dictionary/oxford_dictionary.dart';
-import 'package:words_game/random_letters.dart';
 import "dart:math"; //package to generate random items
-import 'wordlist.dart';
 import 'text_ouptput.dart';
 import 'correct.dart';
-import 'dart:io';
-import 'package:http/http.dart' as http;
+import 'random_letters.dart';
+import 'oxford_check.dart';
 
-import 'wordlist.dart';
-import 'wordlist_20k.dart';
-import 'wordlist_100k.dart';
 
 class HomePageText extends StatefulWidget {
+  const HomePageText({Key? key}) : super(key: key);
+
   @override
   _HomePageText createState() => _HomePageText();
 }
@@ -32,7 +28,7 @@ bool wordcheck = false;
 
 //oxdord dictionary here
 
-void pointscounter() {
+void pointsCounter() {
   if (check && wordcheck == true) {
     points = points + 100;
   } else {
@@ -107,37 +103,36 @@ class _HomePageText extends State<HomePageText> {
                             n2 = list[_random.nextInt(list.length)];
                             n3 = list[_random.nextInt(list.length)];
 
-                            pointscounter();
+                            pointsCounter();
                             _textController.clear();
                           });
                         },
                           color: Colors.redAccent,
-                          child: Text(
+                          child: const Text(
                             'Skip',
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
                       ),
                       MaterialButton(
-                          onPressed: () {
-//update the text
+                          onPressed: () async {
+                            wordcheck = await OxfordChecking.isWordInOxfordDictionary(userInput);
+                            //update the text
                             setState(() {
                               userInput = _textController.text;
                               check = checkRegex.hasMatch(userInput);
-                              wordcheck = wordlist.contains(userInput);
-//update the variables
-
+                              //update the variables
                               n1 = list[_random.nextInt(list.length)];
                               n2 = list[_random.nextInt(list.length)];
                               n3 = list[_random.nextInt(list.length)];
                               checkRegex = RegExp('^(.*)($n1)(.*)($n2)(.*)($n3)(.*)\$');
 
-                              pointscounter();
+                              pointsCounter();
                               _textController.clear();
                             });
                           },
                           color: Colors.teal,
-                          child: Text(
+                          child: const Text(
                             'Try',
                             style: TextStyle(color: Colors.white),
                           )),

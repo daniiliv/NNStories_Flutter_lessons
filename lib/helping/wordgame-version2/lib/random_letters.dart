@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'homepage.dart';
 
 class EnglishLetters extends StatelessWidget {
+  const EnglishLetters({Key? key}) : super(key: key);
 
+
+  @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -15,7 +18,7 @@ class EnglishLetters extends StatelessWidget {
             child: Center(
                 child: Text(
                   n1,
-                  style: TextStyle(fontSize: 80, color: Colors.white),
+                  style: const TextStyle(fontSize: 80, color: Colors.white),
                 ),
             ),
           ),
@@ -29,7 +32,7 @@ class EnglishLetters extends StatelessWidget {
             child: Center(
               child: Text(
                 n2,
-                style: TextStyle(fontSize: 80, color: Colors.white),
+                style: const TextStyle(fontSize: 80, color: Colors.white),
               ),
             ),
           ),
@@ -41,7 +44,7 @@ class EnglishLetters extends StatelessWidget {
           child: Center(
             child: Text(
               n3,
-              style: TextStyle(fontSize: 80, color: Colors.white),
+              style: const TextStyle(fontSize: 80, color: Colors.white),
             ),
           ),
         ),
